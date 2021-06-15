@@ -1,11 +1,13 @@
-Package: SKELETON
+Package: hySpc.read.jdx
 Type: Package
 Version: 0.0.0.9000
-Title: Package's Title
-Description: Short Description of the package.
+Title: File Import Functions for Spectra in JDX File Formats
+Description: File importer for data file in the Joint Committee on Atomic and Molecular Physical (JCAMP-DX) format.
+    The imported data are returned as hyperSpec objects.
+Maintainer: Sang Truong <sttruong@stanford.edu>
 Authors@R: c(
     person("Claudia",   "Beleites",  role = c("aut"), email = "Claudia.Beleites@chemometrix.gmbh"),
-    person("Erick",     "Oduniyi", role = c("aut","cre"), email = "eeoduniyi@gmail.com"),
+    person("Sang", "Truong", role = c("aut","cre"), email = "sttruong@stanford.edu"),
     person("Vilmantas", "Gegzna", role = c("aut")),
     person("Bryan",     "Hanson", role = c("aut"))
     )
@@ -17,14 +19,14 @@ Additional_repositories:
     https://r-hyperspec.github.io/pkg-repo/
 Depends:
     hyperSpec
-Imports: 
+Imports:
     hySpc.testthat
 Suggests:
     knitr,
     covr
 URL: 
-    https://r-hyperspec.github.io/hySpc.skeleton,
-    https://github.com/r-hyperspec/hySpc.skeleton
-BugReports: https://github.com/r-hyperspec/hySpc.skeleton/issues
+    https://r-hyperspec.github.io/hySpc.read.jdx,
+    https://github.com/r-hyperspec/hySpc.read.jdx
+BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
