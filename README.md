@@ -1,32 +1,32 @@
-<!-- START: delete this TODO section, when not needed -->
+<!-- START: delete this TODO section, when not needed
 
 # **TODO** When Creating a New Package (Repository)
 
-Repository **`hySpc.skeleton`** is a package template ("skeleton") for **`r-hyperspec`** family packages.
+Repository **`hySpc.read.jdx`** is a package template ("skeleton") for **`r-hyperspec`** family packages.
 
 When creating a new package (repository):
 
-- [ ] replace words `SKELETON` and `hySpc.skeleton` with the new package name in:
-  - [ ] `DESCRIPTION`
-  - [ ] `NEWS.md`
-  - [ ] `README.md`
-  - [ ] `LICENSE`
-  - [ ] `tests/testthat.R`
-  - [ ] `tests/testthat/test_attached.R`
-  - [ ] other files
-- [ ] update `DESCRIPTION`:
-  - [ ] title
-  - [ ] description
-  - [ ] the list of authors and contributors
-  - [ ] license
-  - [ ] other fields
-- [ ] update licensing information in
-  - [ ] `DESCRIPTION`
-  - [ ] `LICENSE`
-  - [ ] `README.md`
-  - [ ] elswhere
+- [x] replace words `read.jdx` and `hySpc.read.jdx` with the new package name in:
+  - [x] `DESCRIPTION`
+  - [x] `NEWS.md`
+  - [x] `README.md`
+  - [x] `LICENSE`
+  - [x] `tests/testthat.R`
+  - [x] `tests/testthat/test_attached.R`
+  - [x] other files
+- [x] update `DESCRIPTION`:
+  - [x] title
+  - [x] description
+  - [x] the list of authors and contributors
+  - [x] license
+  - [x] other fields
+- [x] update licensing information in
+  - [x] `DESCRIPTION`
+  - [x] `LICENSE`
+  - [x] `README.md`
+  - [x] elswhere
 - [ ] update `README`:
-  - [ ] update badges
+  - [x] update badges
   - [ ] update installation instructions (e.g., instead of `devtools::install(build_vignettes = TRUE)` the following code might be more appropriate if no vignettes are included `devtools::install()`)
   - [ ] update other information, if needed.
 - [ ] create issue labels:
@@ -48,37 +48,38 @@ When creating a new package (repository):
 
 
 ***
-<!-- END: delete this TODO section, when not needed -->
+
+END: delete this TODO section, when not needed -->
 
 
 <!-- ---------------------------------------------------------------------- -->
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version-last-release/hySpc.skeleton)](https://cran.r-project.org/package=hySpc.skeleton)
-[![R-CMD-check](https://github.com/r-hyperspec/hySpc.skeleton/workflows/R-CMD-check/badge.svg)](https://github.com/r-hyperspec/hySpc.skeleton/actions)
-[![Travis](https://travis-ci.com/r-hyperspec/hySpc.skeleton.svg?branch=develop)](https://travis-ci.com/github/r-hyperspec/hySpc.skeleton)
-![Website (pkgdown)](https://github.com/r-hyperspec/hySpc.skeleton/workflows/Website%20(pkgdown)/badge.svg)
-[![Codecov](https://codecov.io/gh/r-hyperspec/hySpc.skeleton/branch/develop/graph/badge.svg)](https://codecov.io/gh/r-hyperspec/hySpc.skeleton?branch=develop)
+[![CRAN status](https://www.r-pkg.org/badges/version-last-release/hySpc.read.jdx)](https://cran.r-project.org/package=hySpc.read.jdx)
+[![R-CMD-check](https://github.com/r-hyperspec/hySpc.read.jdx/workflows/R-CMD-check/badge.svg)](https://github.com/r-hyperspec/hySpc.read.jdx/actions)
+[![Travis](https://travis-ci.com/r-hyperspec/hySpc.read.jdx.svg?branch=develop)](https://travis-ci.com/github/r-hyperspec/hySpc.read.jdx)
+![Website (pkgdown)](https://github.com/r-hyperspec/hySpc.read.jdx/workflows/Website%20(pkgdown)/badge.svg)
+[![Codecov](https://codecov.io/gh/r-hyperspec/hySpc.read.jdx/branch/develop/graph/badge.svg)](https://codecov.io/gh/r-hyperspec/hySpc.read.jdx?branch=develop)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-<!--[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/hySpc.skeleton)](https://cran.r-project.org/package=hySpc.skeleton)-->
-<!--[![metacran downloads](https://cranlogs.r-pkg.org/badges/hySpc.skeleton)](https://cran.r-project.org/package=hySpc.skeleton)-->
+<!--[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/hySpc.read.jdx)](https://cran.r-project.org/package=hySpc.read.jdx)-->
+<!--[![metacran downloads](https://cranlogs.r-pkg.org/badges/hySpc.read.jdx)](https://cran.r-project.org/package=hySpc.read.jdx)-->
 <!-- badges: end -->
 
 
 
-# R Package **hySpc.skeleton**
+# R Package **hySpc.read.jdx**
 
-[**R**](https://www.r-project.org/) package **hySpc.skeleton** is a member of the [**`r-hyperspec`**](https://r-hyperspec.github.io/) packages family, which ...
+[**R**](https://www.r-project.org/) package **hySpc.read.jdx** is a member of the [**`r-hyperspec`**](https://r-hyperspec.github.io/) packages family, which ...
 **WRITE THE PURPOSE OF THIS PACKAGE**  
 
 <!-- ---------------------------------------------------------------------- -->
 
 ## Documentation
 
-There are two versions of **hySpc.skeleton** online documentation:
+There are two versions of **hySpc.read.jdx** online documentation:
 
-a. for the [released version](https://r-hyperspec.github.io/hySpc.skeleton/) of package,  
-b. for the [development version](https://r-hyperspec.github.io/hySpc.skeleton/dev/) of package.
+a. for the [released version](https://r-hyperspec.github.io/hySpc.read.jdx/) of package,  
+b. for the [development version](https://r-hyperspec.github.io/hySpc.read.jdx/dev/) of package.
 
 The documentation of the other **`r-hyperspec`** family packages can be found at [r-hyperspec.github.io](https://r-hyperspec.github.io/).
 
@@ -88,20 +89,20 @@ The documentation of the other **`r-hyperspec`** family packages can be found at
 
 ### Install from CRAN
 
-You can install the released version of **hySpc.skeleton** from [CRAN](https://cran.r-project.org/package=hySpc.skeleton) with:
+You can install the released version of **hySpc.read.jdx** from [CRAN](https://cran.r-project.org/package=hySpc.read.jdx) with:
 
 ```r
-install.packages("hySpc.skeleton")
+install.packages("hySpc.read.jdx")
 ```
 
 
 ### Install from GitHub
 
-You can install the development version of the package from [GitHub](https://github.com/r-hyperspec/hySpc.skeleton):
+You can install the development version of the package from [GitHub](https://github.com/r-hyperspec/hySpc.read.jdx):
 
 ```r
 if (!require(remotes)) {install.packages("remotes")}
-remotes::install_github("r-hyperspec/hySpc.skeleton")
+remotes::install_github("r-hyperspec/hySpc.read.jdx")
 ```
 
 **NOTE 1:**
@@ -114,7 +115,7 @@ So you can either use the [online documentation](https://r-hyperspec.github.io/)
 
 ### Install from Source
 
-1. From the **hySpc.skeleton**'s GitHub [repository](https://github.com/r-hyperspec/hySpc.skeleton):
+1. From the **hySpc.read.jdx**'s GitHub [repository](https://github.com/r-hyperspec/hySpc.read.jdx):
     - If you use Git, `git clone` the branch of interest.
       You may need to fork it before cloning.
     - Or just chose the branch of interest (1 in Figure below), download a ZIP archive with the code (2, 3) and unzip it on your computer.  
@@ -126,9 +127,9 @@ So you can either use the [online documentation](https://r-hyperspec.github.io/)
 
 3. In RStudio 'Console' window, run the code (provided below) to:
     a. Install packages **remotes** and **devtools**.
-    b. Install **hySpc.skeleton**'s dependencies.
-    c. Create **hySpc.skeleton**'s documentation.
-    d. Install package **hySpc.skeleton**.
+    b. Install **hySpc.read.jdx**'s dependencies.
+    c. Create **hySpc.read.jdx**'s documentation.
+    d. Install package **hySpc.read.jdx**.
 
 ```r
 # Do not abort installation even if some packages are not available
@@ -137,13 +138,13 @@ Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = "true")
 # Install packages remotes and devtools
 install.packages(c("remotes", "devtools"))
 
-# Install hySpc.skeleton's dependencies
+# Install hySpc.read.jdx's dependencies
 remotes::install_deps(dependencies = TRUE)
 
-# Create hySpc.skeleton's documentation
+# Create hySpc.read.jdx's documentation
 devtools::document()
 
-# Install package hySpc.skeleton
+# Install package hySpc.read.jdx
 devtools::install(build_vignettes = TRUE)
 ```
 
