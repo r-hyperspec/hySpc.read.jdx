@@ -4,6 +4,7 @@ on:
       - release
       - master
       - develop
+      - feature/update-gha-workflow
 
   pull_request:
     branches:
