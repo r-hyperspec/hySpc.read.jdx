@@ -7,9 +7,9 @@
 #' @note JCAMP-DX support is incomplete and the functions may change without notice. See
 #' `vignette ("fileio")`  and the details section.
 #'
-#' @param file Character. See more in "file" argument in readJDX::readJDX - https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R
-#' @param SOFC Logical. See more in "SOFC" argument in readJDX::readJDX - https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R
-#' @param debug Integer. See more in "debug" argument in readJDX::readJDX - https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R
+#' @param file Character. The file name to import. See more in "file" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)
+#' @param SOFC Logical. Stop on Failed Check. See more in "SOFC" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)
+#' @param debug Integer. The level of debug reporting desired. See more in "debug" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)
 #'
 #' @return A list, as follows:
 #' \itemize{
