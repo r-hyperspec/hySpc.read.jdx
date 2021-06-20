@@ -44,20 +44,4 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc@label$filename <- file
     return(spc)
   }
-  else if (length(list_jdx) == 6){
-    # Case 3: Includes spectrum, the real and imaginary parts of 1D NMR spectrum, and one non-NMR spectrum
-    spc1 <- new("hyperSpec", spc = list_jdx[[4]], wavelength = list_jdx[[4]])
-    spc1@data$filename <- file
-    spc1@label$filename <- file
-
-    spc2 <- new("hyperSpec", spc = list_jdx[[5]], wavelength = list_jdx[[5]])
-    spc2@data$filename <- file
-    spc2@label$filename <- file
-
-    spc3 <- new("hyperSpec", spc = list_jdx[[6]])
-    spc3@data$filename <- file
-    spc3@label$filename <- file
-
-    return(list(spc1, spc2, spc3))
-  }
 }
