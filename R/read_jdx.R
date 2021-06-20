@@ -30,7 +30,7 @@
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug=debug)
   if (length(list_jdx) == 4) {
-    # Case 1: Only includes spectrum
+    # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
     spc <- new("hyperSpec", spc = list_jdx[[4]][['y']], wavelength=list_jdx[[4]][['x']])
     spc@data$filename <- file
     spc@label$filename <- file
