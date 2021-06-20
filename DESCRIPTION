@@ -18,7 +18,16 @@ Additional_repositories:
 Depends:
     hyperSpec
 Imports: 
+<<<<<<< Updated upstream
     hySpc.testthat
+=======
+    hySpc.testthat,
+    testthat,
+    methods,
+    utils,
+    readJDX,
+    dplyr
+>>>>>>> Stashed changes
 Suggests:
     knitr,
     covr
