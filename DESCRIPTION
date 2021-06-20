@@ -6,10 +6,9 @@ Description: File importer for data file in the Joint Committee on Atomic and Mo
     The imported data are returned as hyperSpec objects.
 Maintainer: Sang Truong <sttruong@stanford.edu>
 Authors@R: c(
-    person("Claudia",   "Beleites",  role = c("aut"), email = "Claudia.Beleites@chemometrix.gmbh"),
     person("Sang", "Truong", role = c("aut","cre"), email = "sttruong@stanford.edu"),
-    person("Vilmantas", "Gegzna", role = c("aut")),
-    person("Bryan",     "Hanson", role = c("aut"))
+    person("Bryan A.", "Hanson", role = c("aut"), email = "hanson@depauw.edu",
+      comment = "creator of readJDX")
     )
 License: MIT + file LICENSE
 Encoding: UTF-8
