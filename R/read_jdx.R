@@ -27,7 +27,7 @@
 #' @import readJDX
 #' @importFrom dplyr bind_rows
 
-readjdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
+read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug=debug)
   if (length(list_jdx) == 4) {
     # Case 1: Only includes spectrum
