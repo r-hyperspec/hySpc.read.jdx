@@ -1,0 +1,57 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+---
+# For vignette ---------------------------------------------------------------
+title:       Import and Export Files with JDX files
+# Authors --------------------------------------------------------------------
+author:
+  - name: Claudia Beleites^1,2,3,4,5^, Vilmantas Gegzna
+    email: chemometrie@beleites.de
+    corresponding : yes
+    affiliation   : |
+        1. DIA Raman Spectroscopy Group, University of Trieste/Italy (2005--2008)
+        2. Spectroscopy $\cdot$ Imaging, IPHT, Jena/Germany (2008--2017)
+        3. ÖPV, JKI, Berlin/Germany (2017--2019)
+        4. Arbeitskreis Lebensmittelmikrobiologie und Biotechnologie, Hamburg University, Hamburg/Germany (2019 -- 2020)
+        5. Chemometric Consulting and Chemometrix GmbH, Wölfersheim/Germany (since 2016)
+---
+
+## JCAMP-DX {#sec:jcamp-dx}
+
+\index{ASCII!JCAMP-DX}
+\index{JCAMP-DX!ASCII}
+\index{jdx|see{JCAMP-DX}}
+\index{JCAMP-DX!ASCII}
+
+<!-- % {#sec:read.jdx} -->
+\index{JCAMP-DX!Shimadzu} \index{Shimadzu!GC-MS}
+\index{Shimadzu!JCAMP-DX} \index{JCAMP-DX!PerkinElmer} \index{PerkinElmer!JCAMP-DX}
+\index{PerkinElmer!Infrared} \index{Infrared!PerkinElmer}
+\index{JCAMP-DX!Infrared} \index{Infrared!JCAMP-DX}
+<!-- % -->
+
+Limited import of JCAMP-DX files v. 4.24 [@McDonald1988] is available in function `read.jdx()`{.r}.
+These files can contain multiple spectra, supported data formats are tabular `XY..XY` and `X++(Y..Y)`.
+
+```{r}
+library(hySpc.read.jdx)
+
+isasspc <- hySpc.read.jdx::readjdx("jcamp-dx/isasspc1.dx")
+pcrf <- hySpc.read.jdx::readjdx("jcamp-dx/PCRF.jdx")
+# pcrf_265 <- hySpc.read.jdx::readjdx("jcamp-dx/PCRF_line265.jdx", debug=1) - error as mentioned 
+miniDIFUP <- hySpc.read.jdx::readjdx("jcamp-dx/MiniDIFDUP.JDX")
+sbo <- hySpc.read.jdx::readjdx("jcamp-dx/SBO.JDX")
+```
+
+
+```{block, type="redbox", echo=TRUE}
+**Function `read.jdx.Shimadzu()`{.r} has been removed.**
+An R package dedicated to importing JCAMP-DX is currently under development by Bryan Hanson
+(<https://github.com/bryanhanson/readJDX>).
+Package **hyperSpec** will use that package once it is available on CRAN.
+Maintenance of package **hyperSpec**'s `read.jdx()`{.r} function is limited from now on in favor of Bryan's pacakge.
+```
