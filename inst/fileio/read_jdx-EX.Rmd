@@ -34,11 +34,14 @@ These files can contain multiple spectra, supported data formats are tabular `XY
 
 ```{r}
 library(hySpc.read.jdx)
-pcrf <- hySpc.read.jdx::read_jdx("jcamp-dx/PCRF.jdx")
+
+# 2 examples for case 1 (single spectrum such as IR, Raman, UV, processed/real 1D NMR, etc)
 miniDIFUP <- hySpc.read.jdx::read_jdx("jcamp-dx/MiniDIFDUP.JDX")
 sbo <- hySpc.read.jdx::read_jdx("jcamp-dx/SBO.JDX")
-```
 
+# An example for case 2 (spectrum and the real and imaginary parts of 1D NMR spectrum)
+pcrf <- hySpc.read.jdx::read_jdx("jcamp-dx/PCRF.jdx")
+```
 
 ```{block, type="redbox", echo=TRUE}
 **Function `read.jdx.Shimadzu()`{.r} has been removed.**
