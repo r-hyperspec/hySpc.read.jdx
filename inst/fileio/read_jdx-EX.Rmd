@@ -9,15 +9,10 @@ output:
 title:       Import and Export Files with JDX files
 # Authors --------------------------------------------------------------------
 author:
-  - name: Claudia Beleites^1,2,3,4,5^, Vilmantas Gegzna
-    email: chemometrie@beleites.de
+  - name: Sang T. Truong
+    email: sttruong@stanford.edu
     corresponding : yes
-    affiliation   : |
-        1. DIA Raman Spectroscopy Group, University of Trieste/Italy (2005--2008)
-        2. Spectroscopy $\cdot$ Imaging, IPHT, Jena/Germany (2008--2017)
-        3. ÖPV, JKI, Berlin/Germany (2017--2019)
-        4. Arbeitskreis Lebensmittelmikrobiologie und Biotechnologie, Hamburg University, Hamburg/Germany (2019 -- 2020)
-        5. Chemometric Consulting and Chemometrix GmbH, Wölfersheim/Germany (since 2016)
+    affiliation   : Stanford University
 ---
 
 ## JCAMP-DX {#sec:jcamp-dx}
@@ -39,12 +34,9 @@ These files can contain multiple spectra, supported data formats are tabular `XY
 
 ```{r}
 library(hySpc.read.jdx)
-
-isasspc <- hySpc.read.jdx::readjdx("jcamp-dx/isasspc1.dx")
-pcrf <- hySpc.read.jdx::readjdx("jcamp-dx/PCRF.jdx")
-# pcrf_265 <- hySpc.read.jdx::readjdx("jcamp-dx/PCRF_line265.jdx", debug=1) - error as mentioned 
-miniDIFUP <- hySpc.read.jdx::readjdx("jcamp-dx/MiniDIFDUP.JDX")
-sbo <- hySpc.read.jdx::readjdx("jcamp-dx/SBO.JDX")
+pcrf <- hySpc.read.jdx::read_jdx("jcamp-dx/PCRF.jdx")
+miniDIFUP <- hySpc.read.jdx::read_jdx("jcamp-dx/MiniDIFDUP.JDX")
+sbo <- hySpc.read.jdx::read_jdx("jcamp-dx/SBO.JDX")
 ```
 
 
