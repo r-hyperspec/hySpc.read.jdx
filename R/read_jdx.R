@@ -47,30 +47,11 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
   }
 }
 
-
-file <- paste0(getwd(),"/inst/fileio/jcamp-dx/SBO.JDX")
-
+sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
 hySpc.testthat::test(read_jdx) <- function() {
   context("read_jdx")
-
-  # tmpdir <- paste0(tempdir(), "/read_jdx")
-  # untar("read_jdx.tar.gz",
-  #       files = c("SBO.JDX"),
-  #       exdir = tmpdir)
-  #
-  # on.exit(unlink(tmpdir))
-
-
   test_that("Can import JCAMP-DX file", {
-    # spc <- read_jdx(paste0(tmpdir, "/SBO.JDX"))[[2]]
-    # spc <- read_jdx("D:/Github/hySpc.read.jdx/inst/fileio/jcamp-dx/SBO.JDX")[[2]]
-    # spc <- read_jdx(paste0(tmpdir,"/SBO.JDX"))[[2]]
-    spc <- read_jdx(file)[[2]]
+    expect_silent(spc <- read_jdx(sbo)[[2]])
     expect_equal(dim(spc), c(nrow = 1L, ncol = length(colnames(spc)), nwl = 1868L))
-    expect_equal(round(spc[[1]][[4]],5), 0.95863)
-    expect_equal(round(spc[[1]][[6]],5), 0.94606)
-    # expect_output(print(paste0(tmpdir,"/SBO.JDX")), "100")
-    # expect_output(print(paste0(getwd(),"/inst/fileio/jcamp-dx/SBO.JDX")), "100")
-
   })
 }
