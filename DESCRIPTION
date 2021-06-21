@@ -34,7 +34,5 @@ BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
 Collate: 
-    'demo_function.R'
     'package.R'
     'read_jdx.R'
-    'unittestdata.R'
