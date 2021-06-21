@@ -69,8 +69,9 @@ END: delete this TODO section, when not needed -->
 
 # R Package **hySpc.read.jdx**
 
-[**R**](https://www.r-project.org/) package **hySpc.read.jdx** is a member of the [**`r-hyperspec`**](https://r-hyperspec.github.io/) packages family, which ...
-**WRITE THE PURPOSE OF THIS PACKAGE**  
+[**R**](https://www.r-project.org/) package **hySpc.read.jdx** is a member of the [**`r-hyperspec`**](https://r-hyperspec.github.io/) packages family, which imports
+ files in the Joint Committee on Atomic and Molecular Physical Data Data Exchange format (JCAMP-DX). The imported data are returned as hyperSpec objects.  This is a
+  wrapper for the readJDX package. 
 
 <!-- ---------------------------------------------------------------------- -->
 
