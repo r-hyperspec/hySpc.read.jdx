@@ -26,7 +26,8 @@ Imports:
     dplyr
 Suggests:
     knitr,
-    covr
+    covr,
+    rmarkdown
 URL: 
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
