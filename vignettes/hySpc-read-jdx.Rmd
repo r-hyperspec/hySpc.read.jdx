@@ -1,14 +1,14 @@
 ---
----
 # For vignette ---------------------------------------------------------------
-title:       Import and Export Files with JDX files
+title:       'Import and Export Files with JDX files'
+subtitle:    'Tutorial on Spectra File Import from JDX Files for "hyperSpec"'
+description: 'Tutorial on spectra file import from JDX files for "hyperSpec".'
 # Authors --------------------------------------------------------------------
 author:
-  - name: Sang T. Truong
+  - name: Sang Truong, Bryan Hanson 
     email: sttruong@stanford.edu
     corresponding : yes
     affiliation   : Stanford University
-    
 # Document -------------------------------------------------------------------
 date:        "`r Sys.Date()`"
 output:
@@ -35,6 +35,7 @@ csl: elsevier-with-titles.csl
 # Pkgdown --------------------------------------------------------------------
 pkgdown:
   as_is: true
+  set_null_theme: no
 ---
 
 
@@ -46,10 +47,13 @@ rm(list = ls(all.names = TRUE))
 ```{r setup, include = FALSE}
 # Packages -------------------------------------------------------------------
 library(hySpc.read.jdx)
+
 # Functions ------------------------------------------------------------------
 source("vignette-functions.R", encoding = "UTF-8")
+
 # Settings -------------------------------------------------------------------
 source("vignette-default-settings.R", encoding = "UTF-8")
+
 # Temporary options ----------------------------------------------------------
 # Change the value of this option in "vignette-default-settings.R"
 show_reviewers_notes = getOption("show_reviewers_notes", TRUE)
