@@ -1,0 +1,52 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+---
+# For vignette ---------------------------------------------------------------
+title:       Import and Export Files with JDX files
+# Authors --------------------------------------------------------------------
+author:
+  - name: Sang T. Truong
+    email: sttruong@stanford.edu
+    corresponding : yes
+    affiliation   : Stanford University
+---
+
+## JCAMP-DX {#sec:jcamp-dx}
+
+\index{ASCII!JCAMP-DX}
+\index{JCAMP-DX!ASCII}
+\index{jdx|see{JCAMP-DX}}
+\index{JCAMP-DX!ASCII}
+
+<!-- % {#sec:read.jdx} -->
+\index{JCAMP-DX!Shimadzu} \index{Shimadzu!GC-MS}
+\index{Shimadzu!JCAMP-DX} \index{JCAMP-DX!PerkinElmer} \index{PerkinElmer!JCAMP-DX}
+\index{PerkinElmer!Infrared} \index{Infrared!PerkinElmer}
+\index{JCAMP-DX!Infrared} \index{Infrared!JCAMP-DX}
+<!-- % -->
+
+Limited import of JCAMP-DX files v. 4.24 [@McDonald1988] is available in function `read.jdx()`{.r}.
+These files can contain multiple spectra, supported data formats are tabular `XY..XY` and `X++(Y..Y)`.
+
+```{r}
+library(hySpc.read.jdx)
+
+# 2 examples for case 1 (single spectrum such as IR, Raman, UV, processed/real 1D NMR, etc)
+miniDIFUP <- hySpc.read.jdx::read_jdx("jcamp-dx/MiniDIFDUP.JDX")
+sbo <- hySpc.read.jdx::read_jdx("jcamp-dx/SBO.JDX")
+
+# An example for case 2 (spectrum and the real and imaginary parts of 1D NMR spectrum)
+pcrf <- hySpc.read.jdx::read_jdx("jcamp-dx/PCRF.jdx")
+```
+
+```{block, type="redbox", echo=TRUE}
+**Function `read.jdx.Shimadzu()`{.r} has been removed.**
+An R package dedicated to importing JCAMP-DX is currently under development by Bryan Hanson
+(<https://github.com/bryanhanson/readJDX>).
+Package **hyperSpec** will use that package once it is available on CRAN.
+Maintenance of package **hyperSpec**'s `read.jdx()`{.r} function is limited from now on in favor of Bryan's pacakge.
+```
