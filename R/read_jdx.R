@@ -16,7 +16,7 @@
 #'  \item The first element is the file meta data
 #'  \item The second element is a hyperSpec object
 #'}
-#' @author C. Beleites with contributions by Bryan Hanson
+#' @author Sang Truong with contributions by Bryan Hanson
 #'
 #' @export
 #' @concept io
