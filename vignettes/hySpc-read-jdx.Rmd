@@ -1,9 +1,4 @@
 ---
-output:
-  html_document: default
-  pdf_document: default
----
-
 ---
 # For vignette ---------------------------------------------------------------
 title:       Import and Export Files with JDX files
@@ -13,7 +8,76 @@ author:
     email: sttruong@stanford.edu
     corresponding : yes
     affiliation   : Stanford University
+    
+# Document -------------------------------------------------------------------
+date:        "`r Sys.Date()`"
+output:
+    bookdown::html_document2:
+      base_format: rmarkdown::html_vignette
+      toc: yes
+      toc_depth: 2
+      fig_caption: yes
+      number_sections: true
+      css:
+        - vignette.css
+        - style.css
+vignette: >
+    % \VignetteIndexEntry{Introduction to Package "hySpc.read.jdx"}
+    % \VignetteKeyword{hySpc.read.jdx}
+    % \VignettePackage{hySpc.read.jdx}
+    % \VignetteEngine{knitr::rmarkdown}
+    % \VignetteEncoding{UTF-8}
+# Citations/References -------------------------------------------------------
+link-citations: yes
+bibliography: resources/intro-pkg.bib
+biblio-style: plain
+csl: elsevier-with-titles.csl
+# Pkgdown --------------------------------------------------------------------
+pkgdown:
+  as_is: true
 ---
+
+
+```{r cleanup-hyperspec, include = FALSE}
+# Clean up to ensure reproducible workspace ----------------------------------
+rm(list = ls(all.names = TRUE))
+```
+
+```{r setup, include = FALSE}
+# Packages -------------------------------------------------------------------
+library(hySpc.read.jdx)
+# Functions ------------------------------------------------------------------
+source("vignette-functions.R", encoding = "UTF-8")
+# Settings -------------------------------------------------------------------
+source("vignette-default-settings.R", encoding = "UTF-8")
+# Temporary options ----------------------------------------------------------
+# Change the value of this option in "vignette-default-settings.R"
+show_reviewers_notes = getOption("show_reviewers_notes", TRUE)
+```
+
+
+```{r bib, echo = FALSE, paged.print = FALSE}
+dir.create("resources", showWarnings = FALSE)
+knitr::write_bib(
+  c("hyperSpec",
+    "baseline",
+    "matrixStats",
+    "mvtnorm",
+    "plotrix",
+    "pls"
+  ),
+  file = "resources/intro-pkg.bib"
+)
+```
+
+
+<!-- This chunk inserts common info about all the vignettes -->
+
+```{r, echo = FALSE, results = "asis"}
+res <- knitr::knit_child("list-of-vignettes.md", quiet = TRUE)
+cat(res, sep = '\n')
+```
+
 
 ## JCAMP-DX {#sec:jcamp-dx}
 
@@ -36,11 +100,15 @@ These files can contain multiple spectra, supported data formats are tabular `XY
 library(hySpc.read.jdx)
 
 # 2 examples for case 1 (single spectrum such as IR, Raman, UV, processed/real 1D NMR, etc)
-miniDIFUP <- hySpc.read.jdx::read_jdx("jcamp-dx/MiniDIFDUP.JDX")
-sbo <- hySpc.read.jdx::read_jdx("jcamp-dx/SBO.JDX")
+miniDIFUP_file <- system.file("extdata", "MiniDIFDUP.JDX", package = "readJDX")
+miniDIFUP <- hySpc.read.jdx::read_jdx(miniDIFUP_file)
+
+sbo_file <- system.file("extdata", "SBO.JDX", package = "readJDX")
+sbo <- hySpc.read.jdx::read_jdx(sbo_file)
 
 # An example for case 2 (spectrum and the real and imaginary parts of 1D NMR spectrum)
-pcrf <- hySpc.read.jdx::read_jdx("jcamp-dx/PCRF.jdx")
+pcrf_file <- system.file("extdata", "PCRF.jdx", package = "readJDX")
+pcrf <- hySpc.read.jdx::read_jdx(pcrf_file)
 ```
 
 ```{block, type="redbox", echo=TRUE}
