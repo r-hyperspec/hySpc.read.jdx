@@ -61,7 +61,7 @@ hySpc.testthat::test(read_jdx) <- function() {
   # on.exit(unlink(tmpdir))
 
 
-  test_that("JCAMP-DX example file", {
+  test_that("Can import JCAMP-DX file", {
     # spc <- read_jdx(paste0(tmpdir, "/SBO.JDX"))[[2]]
     # spc <- read_jdx("D:/Github/hySpc.read.jdx/inst/fileio/jcamp-dx/SBO.JDX")[[2]]
     # spc <- read_jdx(paste0(tmpdir,"/SBO.JDX"))[[2]]
