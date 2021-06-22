@@ -27,7 +27,8 @@ Imports:
 Suggests:
     knitr,
     covr,
-    rmarkdown
+    rmarkdown,
+    bookdown
 URL: 
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
