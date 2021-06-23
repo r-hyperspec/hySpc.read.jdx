@@ -1,22 +1,22 @@
-#' @title JCAMP-DX Import for Shimadzu Library Spectra.
 #'
-#' @description
-#' This is a first rough import function for JCAMP-DX spectra.
+#' @title Import JCAMP-DX Files to hyperSpec
 #'
+#' Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+#' See the vignettes there for much more information.
+#' 
+#' @param file Character. The file name to import. See "file" argument in [readJDX::readJDX()].
 #'
-#' @note JCAMP-DX support is incomplete and the functions may change without notice. See
-#' `vignette ("fileio")`  and the details section.
+#' @param SOFC Logical. "Stop on Failed Check". See "SOFC" argument in [readJDX::readJDX()].
 #'
-#' @param file Character. The file name to import. See more in "file" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)
-#' @param SOFC Logical. Stop on Failed Check. See more in "SOFC" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)
-#' @param debug Integer. The level of debug reporting desired. See more in "debug" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)
+#' @param debug Integer. The level of debug reporting desired. See "debug" argument in [readJDX::readJDX()].
 #'
 #' @return A list, as follows:
 #' \itemize{
-#'  \item The first element is the file meta data
+#'  \item The first element is the file metadata
 #'  \item The second element is a hyperSpec object
 #' }
-#' @author Sang Truong with contributions by Bryan Hanson
+#'
+#' @author Sang Truong 
 #'
 #' @export
 #' @concept io
@@ -26,6 +26,12 @@
 #' @import hySpc.testthat
 #' @import readJDX
 #' @importFrom dplyr bind_rows
+#'
+#' @examples
+#'
+#' sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
+#' spc <- read_jdx(sbo)[[2]])
+#' plot(spc)
 #'
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
 
@@ -38,7 +44,7 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   }
-  # not sure this next option will be of great interest
+  # not sure this next option will be of great interest to most hyperSpec users
   else if (length(list_jdx) == 5) {
     # Case 2: Includes spectrum and the real and imaginary parts of 1D NMR spectrum
     temp_spc <- bind_rows(list(list_jdx[[4]], list_jdx[[5]]))
