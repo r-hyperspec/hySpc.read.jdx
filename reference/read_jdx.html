@@ -169,7 +169,12 @@ See the vignettes there for much more information.</p>
     <p>Sang Truong</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"></pre>
+    <pre class="examples"><div class='input'>
+<span class='va'>sbo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"SBO.jdx"</span>, package <span class='op'>=</span> <span class='st'>"readJDX"</span><span class='op'>)</span>
+<span class='va'>spc</span> <span class='op'>&lt;-</span> <span class='fu'>read_jdx</span><span class='op'>(</span><span class='va'>sbo</span><span class='op'>)</span><span class='op'>[[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>]</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>spc</span><span class='op'>)</span>
+</div><div class='img'><img src='read_jdx-1.png' alt='' width='466' height='288' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
