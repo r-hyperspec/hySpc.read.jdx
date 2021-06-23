@@ -12,7 +12,6 @@ Authors@R: c(
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
-LazyData: yes
 Additional_repositories: 
     https://r-hyperspec.github.io/pkg-repo/
 Depends:
