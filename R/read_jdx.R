@@ -47,9 +47,9 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
   }
 }
 
-sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
 hySpc.testthat::test(read_jdx) <- function() {
   context("read_jdx")
+  sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
   test_that("Can import JCAMP-DX file", {
     expect_silent(spc <- read_jdx(sbo)[[2]])
     expect_equal(dim(spc), c(nrow = 1L, ncol = length(colnames(spc)), nwl = 1868L))
