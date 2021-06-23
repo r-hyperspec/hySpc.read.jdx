@@ -21,15 +21,16 @@
 #' @export
 #' @concept io
 #'
-#' @importFrom utils head modifyList maintainer
 #' @importFrom methods new
 #' @import hyperSpec
 #' @import hySpc.testthat
 #' @import readJDX
 #' @importFrom dplyr bind_rows
-
+#'
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
+
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
+
   if (length(list_jdx) == 4) {
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
     spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
@@ -37,6 +38,7 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   }
+  # not sure this next option will be of great interest
   else if (length(list_jdx) == 5) {
     # Case 2: Includes spectrum and the real and imaginary parts of 1D NMR spectrum
     temp_spc <- bind_rows(list(list_jdx[[4]], list_jdx[[5]]))
