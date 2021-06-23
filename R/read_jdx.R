@@ -30,7 +30,7 @@
 #' @examples
 #'
 #' sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
-#' spc <- read_jdx(sbo)[[2]])
+#' spc <- read_jdx(sbo)[[2]]
 #' plot(spc)
 #'
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
