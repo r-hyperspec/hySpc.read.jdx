@@ -5,7 +5,7 @@ subtitle:    'Tutorial on Spectra File Import from JDX Files for "hyperSpec"'
 description: 'Tutorial on spectra file import from JDX files for "hyperSpec".'
 # Authors --------------------------------------------------------------------
 author:
-  - name: Sang Truong, Bryan Hanson 
+  - name: Sang Truong, Bryan Hanson
     email: sttruong@stanford.edu
     corresponding : yes
     affiliation   : Stanford University
@@ -100,7 +100,7 @@ cat(res, sep = '\n')
 Limited import of JCAMP-DX files v. 4.24 [@McDonald1988] is available in function `read.jdx()`{.r}.
 These files can contain multiple spectra, supported data formats are tabular `XY..XY` and `X++(Y..Y)`.
 
-```{r}
+```{r, eval = FALSE}
 library(hySpc.read.jdx)
 
 # 2 examples for case 1 (single spectrum such as IR, Raman, UV, processed/real 1D NMR, etc)
