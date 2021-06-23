@@ -6,7 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JCAMP-DX Import for Shimadzu Library Spectra. — read_jdx • hySpc.read.jdx</title>
+<title>Import JCAMP-DX Files to hyperSpec
+
+Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+See the vignettes there for much more information. — read_jdx • hySpc.read.jdx</title>
 
 
 <!-- jquery -->
@@ -41,8 +44,13 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="JCAMP-DX Import for Shimadzu Library Spectra. — read_jdx" />
-<meta property="og:description" content="This is a first rough import function for JCAMP-DX spectra." />
+<meta property="og:title" content="Import JCAMP-DX Files to hyperSpec
+
+Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+See the vignettes there for much more information. — read_jdx" />
+<meta property="og:description" content="Import JCAMP-DX Files to hyperSpec
+Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+See the vignettes there for much more information." />
 
 
 
@@ -116,13 +124,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>JCAMP-DX Import for Shimadzu Library Spectra.</h1>
+    <h1>Import JCAMP-DX Files to hyperSpec
+
+Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+See the vignettes there for much more information.</h1>
     <small class="dont-index">Source: <a href='https://github.com/r-hyperspec/hySpc.read.jdx/blob/master/R/read_jdx.R'><code>R/read_jdx.R</code></a></small>
     <div class="hidden name"><code>read_jdx.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This is a first rough import function for JCAMP-DX spectra.</p>
+    <p>Import JCAMP-DX Files to hyperSpec</p>
+<p>Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+See the vignettes there for much more information.</p>
     </div>
 
     <pre class="usage"><span class='fu'>read_jdx</span><span class='op'>(</span>file <span class='op'>=</span> <span class='kw'><a href='https://rdrr.io/r/base/stop.html'>stop</a></span><span class='op'>(</span><span class='st'>"filename is needed"</span><span class='op'>)</span>, SOFC <span class='op'>=</span> <span class='cn'>TRUE</span>, debug <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></pre>
@@ -132,33 +145,31 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>file</th>
-      <td><p>Character. The file name to import. See more in "file" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)</p></td>
+      <td><p>Character. The file name to import. See "file" argument in [readJDX::readJDX()].</p></td>
     </tr>
     <tr>
       <th>SOFC</th>
-      <td><p>Logical. Stop on Failed Check. See more in "SOFC" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)</p></td>
+      <td><p>Logical. "Stop on Failed Check". See "SOFC" argument in [readJDX::readJDX()].</p></td>
     </tr>
     <tr>
       <th>debug</th>
-      <td><p>Integer. The level of debug reporting desired. See more in "debug" argument in readJDX::readJDX [here](https://github.com/bryanhanson/readJDX/blob/master/R/readJDX.R)</p></td>
+      <td><p>Integer. The level of debug reporting desired. See "debug" argument in [readJDX::readJDX()].</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A list, as follows:</p><ul>
-<li><p>The first element is the file meta data</p></li>
+<li><p>The first element is the file metadata</p></li>
 <li><p>The second element is a hyperSpec object</p></li>
 </ul>
 
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p>JCAMP-DX support is incomplete and the functions may change without notice. See
-`vignette ("fileio")`  and the details section.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-    <p>Sang Truong with contributions by Bryan Hanson</p>
+    <p>Sang Truong</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
