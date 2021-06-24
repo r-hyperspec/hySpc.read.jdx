@@ -1,5 +1,5 @@
 #'
-#' @title Import JCAMP-DX Files to hyperSpec
+#' Import JCAMP-DX Files to hyperSpec
 #'
 #' Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
 #' See the vignettes there for much more information.
