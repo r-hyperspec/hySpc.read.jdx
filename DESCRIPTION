@@ -27,6 +27,7 @@ Suggests:
     knitr,
     covr,
     markdown,
+    rmarkown,
     bookdown,
     styler
 URL: 
