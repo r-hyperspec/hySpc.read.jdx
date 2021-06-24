@@ -26,7 +26,7 @@ Imports:
 Suggests:
     knitr,
     covr,
-    rmarkdown,
+    markdown,
     bookdown,
     styler
 URL: 
