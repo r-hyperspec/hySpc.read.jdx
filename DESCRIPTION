@@ -28,8 +28,7 @@ Suggests:
     covr,
     rmarkdown,
     bookdown,
-    styler,
-    markdown
+    styler
 URL: 
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
