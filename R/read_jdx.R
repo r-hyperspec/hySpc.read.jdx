@@ -1,7 +1,7 @@
 #'
 #' Import JCAMP-DX Files to hyperSpec
 #'
-#' Import JCAMP-DX files to hyperSpec objects.  Uses the `readJDX` function in package `readJDX`.
+#' Import JCAMP-DX files to `hyperSpec` objects.  Uses the `readJDX` function in package `readJDX`.
 #' See the vignettes there for much more information.
 #'
 #' @param file Character. The file name to import. See "file" argument in [readJDX::readJDX()].
@@ -17,24 +17,24 @@
 #' }
 #'
 #' @author Sang Truong
-#' Maintainer: Sang Truong <sttruong@stanford.edu>
+#'
+#' @concept io
 #'
 #' @export
-#' @concept io
 #'
 #' @importFrom methods new
 #' @import hyperSpec
 #' @import hySpc.testthat
 #' @import readJDX
-#' @importFrom dplyr bind_rows
-#' @importFrom utils maintainer packageDescription
+#' @importFrom utils packageDescription
 #'
 #' @examples
 #'
 #' sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
-#' spc <- read_jdx(sbo)[[2]] # grab the data
-#' plot(spc)
-#' head(sbo[[1]], n = 40) # metadata is available too
+#' spc <- read_jdx(sbo)
+#' plot(spc[[2]]) # the hyperSpec object is in the 2nd list element
+#' head(spc[[1]], n = 40) # metadata is available in the 1st list element
+#'
 
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
 
@@ -47,43 +47,39 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   }
-  # not sure this next option will be of great interest to most hyperSpec users
+  # Not sure this next option will be of great interest to most hyperSpec users, but it works
   else if (length(list_jdx) == 5) {
     # Case 2: Includes spectrum and the real and imaginary parts of 1D NMR spectrum
-    temp_spc <- bind_rows(list(list_jdx[[4]], list_jdx[[5]]))
-    spc <- new("hyperSpec", spc = temp_spc[["y"]], wavelength = temp_spc[["x"]])
+    temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
+    spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
     spc@data$filename <- file
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   }
   else {
     stop(
-      "read_jdx() so far can only return a list of 4 or 5 elements from readJDX::readJDX.",
-      " Please file an enhancement request at", packageDescription("hyperSpc.read.jdx")$BugReports,
-      " with your file as an example or contact the maintainer (",
-      maintainer("hySpc.read.jdx"), ")."
+      "read_jdx() cannot process all types of JCAMP-DX files.",
+      "You may wish to look at readJDX::readJDX for more information.",
+      "If you have a file you think should work, or wish to suggest an enhancement",
+      "Please create an issue at", packageDescription("hyperSpc.read.jdx")$BugReports
     )
   }
 }
 
 hySpc.testthat::test(read_jdx) <- function() {
   context("read_jdx")
+
+  # get data files
   sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
   pcrf <- system.file("extdata", "PCRF.jdx", package = "readJDX")
-  isasspc <- system.file("extdata", "isasspc1.dx", package = "readJDX")
 
-  test_that("JCAMP-DX file can be imported", {
+  test_that("SBO.jdx (IR spectrum) can be imported", {
     expect_silent(spc <- read_jdx(sbo)[[2]])
     expect_equal(dim(spc), c(nrow = 1L, ncol = length(colnames(spc)), nwl = 1868L))
   })
 
-  test_that("readJDX::readJDX only return a list of 4 or 5 elements", {
-    expect_equal(length(readJDX(sbo)), 4)
-
-    expect_equal(length(readJDX(pcrf)), 5)
-
-    expect_error(hyperSpc.read.jdx::read_jdx(isasspc))
-
-    expect_warning(readJDX(isasspc))
+  test_that("PCRF.jdx (real & imaginary 1H NMR spectrum) can be imported", {
+    expect_silent(spc <- read_jdx(pcrf)[[2]])
+    expect_equal(dim(spc), c(nrow = 2L, ncol = length(colnames(spc)), nwl = 7014L))
   })
 }
