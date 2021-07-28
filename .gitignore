@@ -1,12 +1,38 @@
-.Rproj.user
-.Rproj
+# History files
 .Rhistory
+.Rapp.history
+
+# Session Data files
 .RData
-.Ruserdata
-man/*.Rd
-docs/
-NAMESPACE
+
+# Example code in package build process
+*-Ex.R
+
+# Mac directory files
+*.DS_Store
+
+# RStudio files
+.Rproj.user
+*.Rproj
+
+# Local pkgdown files
 docs
-.DS_Store
-hySpc.read.jdx.Rproj
-*.html
+
+# Unit tests
+tests/testthat/_snaps/attached/
+tests/testthat/Rplots.pdf
+tests/testthat/fileio
+
+# Vignettes
+vignettes/*-pkg.bib
+vignettes/resources/*.bib
+vignettes/fileio
+
+# Documentation
+man/*.Rd
+NAMESPACE
+NEWS.html
+README.html
+
+# Other
+_tmp/
