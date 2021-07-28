@@ -93,7 +93,10 @@ hySpc.testthat::test(read_jdx) <- function() {
   # next test is a 2D NMR file which readJDX imports fine, but
   # length(list_jdx) != 4 or 5, which is error condition for read_jdx
   test_that("Error is thrown when 2D NMR file is imported", {
-    expect_error(spc <- read_jdx(isasspc1))
+    expect_warning(
+      expect_error(spc <- read_jdx(isasspc1)),
+      "Looks like 2D NMR but could not identify vendor"
+    )
   })
 
 }
