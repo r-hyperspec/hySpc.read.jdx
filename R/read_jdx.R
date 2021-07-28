@@ -61,7 +61,7 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
       "read_jdx() cannot process all types of JCAMP-DX files.",
       "You may wish to look at readJDX::readJDX for more information.",
       "If you have a file you think should work, or wish to suggest an enhancement",
-      "Please create an issue at", packageDescription("hyperSpc.read.jdx")$BugReports
+      "Please create an issue at", packageDescription("hySpc.read.jdx")$BugReports
     )
   }
 }
@@ -72,6 +72,8 @@ hySpc.testthat::test(read_jdx) <- function() {
   # get data files
   sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
   pcrf <- system.file("extdata", "PCRF.jdx", package = "readJDX")
+  pcrf_265 <- system.file("extdata", "PCRF_line265.jdx", package = "readJDX")
+  isasspc1 <- system.file("extdata", "isasspc1.dx", package = "readJDX")
 
   test_that("SBO.jdx (IR spectrum) can be imported", {
     expect_silent(spc <- read_jdx(sbo)[[2]])
@@ -82,4 +84,16 @@ hySpc.testthat::test(read_jdx) <- function() {
     expect_silent(spc <- read_jdx(pcrf)[[2]])
     expect_equal(dim(spc), c(nrow = 2L, ncol = length(colnames(spc)), nwl = 7014L))
   })
+
+  # next test is for a corrupted file, which on readJDX throws an error
+  test_that("Error is thrown when corrupt file is imported", {
+    expect_error(spc <- read_jdx(pcrf_265))
+  })
+
+  # next test is a 2D NMR file which readJDX imports fine, but
+  # length(list_jdx) != 4 or 5, which is error condition for read_jdx
+  test_that("Error is thrown when 2D NMR file is imported", {
+    expect_error(spc <- read_jdx(isasspc1))
+  })
+
 }
