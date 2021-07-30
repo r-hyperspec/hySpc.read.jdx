@@ -18,7 +18,6 @@
 #'        See "debug" argument in [readJDX::readJDX()].
 #'
 #' @return A list, as follows:
-#'
 #'  - The first element is the file metadata;
 #'  - The second element is a `hyperSpec` object.
 #'
