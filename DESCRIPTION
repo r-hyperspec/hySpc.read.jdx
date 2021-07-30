@@ -25,19 +25,12 @@ Imports:
     hySpc.testthat,
     testthat,
     methods,
-    utils,
-    dplyr
+    utils
 Suggests:
-    knitr,
-    covr,
-    markdown,
-    rmarkdown,
-    bookdown,
-    styler
+    covr
 URL: 
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
 BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
-VignetteBuilder: knitr
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
