@@ -40,10 +40,7 @@
 #' plot(spc[[2]]) # The hyperSpec object is in the 2nd list element
 #'
 #' head(spc[[1]], n = 40) # Metadata is available in the 1st list element
-#'
-
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
-
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
   if (length(list_jdx) == 4) {
@@ -63,8 +60,7 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc@data$filename <- file
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
-  }
-  else {
+  } else {
     stop(
       "read_jdx() cannot process all types of JCAMP-DX files.\n",
       "You may wish to look at readJDX::readJDX() for more information. \n",
