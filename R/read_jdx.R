@@ -35,11 +35,11 @@
 #' @importFrom utils packageDescription
 #'
 #' @examples
-#'
 #' sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' spc <- read_jdx(sbo)
-#' plot(spc[[2]]) # the hyperSpec object is in the 2nd list element
-#' head(spc[[1]], n = 40) # metadata is available in the 1st list element
+#' plot(spc[[2]]) # The hyperSpec object is in the 2nd list element
+#'
+#' head(spc[[1]], n = 40) # Metadata is available in the 1st list element
 #'
 
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
