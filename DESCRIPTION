@@ -2,7 +2,10 @@ Package: hySpc.read.jdx
 Type: Package
 Version: 0.0.0.9000
 Title: File Import Functions for Spectra in JCAMP-DX File Formats
-Description: Import files in the Joint Committee on Atomic and Molecular Physical Data Data Exchange format (JCAMP-DX). The imported data are returned as hyperSpec objects.  A wrapper for the readJDX package.
+Description: Import files in the Joint Committee on Atomic and Molecular 
+             Physical Data Data Exchange format (JCAMP-DX). The imported 
+             data are returned as hyperSpec objects. A wrapper for the 
+             readJDX package.
 Maintainer: Sang Truong <sttruong@stanford.edu>
 Authors@R: c(
     person("Sang", "Truong", role = "aut", email = "sttruong@stanford.edu"),
