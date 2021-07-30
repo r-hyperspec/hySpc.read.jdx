@@ -1,20 +1,27 @@
-#'
+
+# Function -------------------------------------------------------------------
+
 #' Import JCAMP-DX Files to hyperSpec
 #'
-#' Import JCAMP-DX files to `hyperSpec` objects.  Uses the `readJDX` function in package `readJDX`.
-#' See the vignettes there for much more information.
+#' Import JCAMP-DX files to `hyperSpec` objects.
+#' Uses the [readJDX()][readJDX::readJDX()] function in package \pkg{readJDX}.
+#' See the vignettes there for much more information:
+#' `browseVignettes("readJDX")`.
 #'
-#' @param file Character. The file name to import. See "file" argument in [readJDX::readJDX()].
+#' @param file Character. The file name to import.
+#'        See "file" argument in [readJDX::readJDX()].
 #'
-#' @param SOFC Logical. "Stop on Failed Check". See "SOFC" argument in [readJDX::readJDX()].
+#' @param SOFC Logical. "Stop on Failed Check".
+#'        See "SOFC" argument in [readJDX::readJDX()].
 #'
-#' @param debug Integer. The level of debug reporting desired. See "debug" argument in [readJDX::readJDX()].
+#' @param debug Integer. The level of debug reporting desired.
+#'        See "debug" argument in [readJDX::readJDX()].
 #'
 #' @return A list, as follows:
-#' \itemize{
-#'  \item The first element is the file metadata
-#'  \item The second element is a hyperSpec object
-#' }
+#'
+#'  - The first element is the file metadata;
+#'  - The second element is a `hyperSpec` object.
+#'
 #'
 #' @author Sang Truong
 #'
@@ -22,10 +29,10 @@
 #'
 #' @export
 #'
-#' @importFrom methods new
 #' @import hyperSpec
 #' @import hySpc.testthat
 #' @import readJDX
+#' @importFrom methods new
 #' @importFrom utils packageDescription
 #'
 #' @examples
@@ -47,9 +54,11 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   }
-  # Not sure this next option will be of great interest to most hyperSpec users, but it works
+  # Not sure this next option will be of great interest to most hyperSpec users,
+  # but it works
   else if (length(list_jdx) == 5) {
-    # Case 2: Includes spectrum and the real and imaginary parts of 1D NMR spectrum
+    # Case 2: Includes spectrum and the real and imaginary parts of
+    #         1D NMR spectrum
     temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
     spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
     spc@data$filename <- file
@@ -58,13 +67,17 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
   }
   else {
     stop(
-      "read_jdx() cannot process all types of JCAMP-DX files.",
-      "You may wish to look at readJDX::readJDX for more information.",
-      "If you have a file you think should work, or wish to suggest an enhancement",
-      "Please create an issue at", packageDescription("hySpc.read.jdx")$BugReports
+      "read_jdx() cannot process all types of JCAMP-DX files.\n",
+      "You may wish to look at readJDX::readJDX() for more information. \n",
+      "If you have a file you think should work, or wish to suggest an ",
+      "enhancement, please, create an issue at\n",
+      packageDescription("hySpc.read.jdx")$BugReports
     )
   }
 }
+
+
+# Unit tests -----------------------------------------------------------------
 
 hySpc.testthat::test(read_jdx) <- function() {
   context("read_jdx")
@@ -98,5 +111,4 @@ hySpc.testthat::test(read_jdx) <- function() {
       "Looks like 2D NMR but could not identify vendor"
     )
   })
-
 }
