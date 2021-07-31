@@ -26,13 +26,17 @@
 #'   )
 #' jdx_extract_value(metadata, key = "XUNITS")
 #'
+#' jdx_extract_value(metadata, key = c("XUNITS", "YUNITS"))
+#'
+#'
 #' file <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' list_jdx <- readJDX::readJDX(file)
 #' jdx_extract_value(list_jdx$metadata, key = "TITLE")
 #'
 
 jdx_extract_value <- function(metadata, key) {
-  key_pattern <- paste0("##\\$?", key, "=\\s*")
+  one_of_keys <- paste(key, collapse = "|")
+  key_pattern <- paste0("##\\$?(", one_of_keys, ")=\\s*")
   rows_with_key <- grepl(key_pattern, metadata)
   value <- trimws(sub("^.*=", "", metadata[rows_with_key]))
   names(value) <- key
