@@ -5,6 +5,7 @@
 #'
 #' @param metadata (character): Vector of strings with meadata.
 #' @param key (character): Key to extract.
+#' @param named (logical): Should the output be a named vector?
 #'
 #' @return (character): value corresponding to the key.
 #'
@@ -34,11 +35,13 @@
 #' jdx_extract_value(list_jdx$metadata, key = "TITLE")
 #'
 
-jdx_extract_value <- function(metadata, key) {
+jdx_extract_value <- function(metadata, key, named = FALSE) {
   one_of_keys <- paste(key, collapse = "|")
   key_pattern <- paste0("##\\$?(", one_of_keys, ")=\\s*")
   rows_with_key <- grepl(key_pattern, metadata)
   value <- trimws(sub("^.*=", "", metadata[rows_with_key]))
-  names(value) <- key
+  if (isTRUE(named)) {
+    names(value) <- key
+  }
   value
 }
