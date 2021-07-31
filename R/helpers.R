@@ -33,7 +33,7 @@
 #'
 
 jdx_extract_value <- function(metadata, key) {
-  key_pattern <- paste0("##\\$?", key, "=")
+  key_pattern <- paste0("##\\$?", key, "=\\s*")
   rows_with_key <- grepl(key_pattern, metadata)
   trimws(sub("^.*=", "", metadata[rows_with_key]))
 }
