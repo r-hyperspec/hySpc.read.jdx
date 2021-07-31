@@ -3,7 +3,7 @@
 #'
 #' Extract a value from string of JDX metadata when a key is given.
 #'
-#' @param metadata (character): Vector of strings with meadata.
+#' @param metadata (character): Vector of strings with metadata.
 #' @param key (character): Key to extract.
 #' @param named (logical): Should the output be a named vector?
 #'
