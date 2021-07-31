@@ -42,10 +42,16 @@
 #' head(spc[[1]], n = 40) # Metadata is available in the 1st list element
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
+  x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNIT")
+  y_units <- jdx_extract_value(list_jdx$metadata, key = "YUNIT")
 
   if (length(list_jdx) == 4) {
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
-    spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
+    spc <- new("hyperSpec",
+      spc = list_jdx[[4]][["y"]],
+      wavelength = list_jdx[[4]][["x"]],
+      labels = list(.wavelength = x_units, spc = y_units)
+    )
     spc@data$filename <- file
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
@@ -56,7 +62,11 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     # Case 2: Includes spectrum and the real and imaginary parts of
     #         1D NMR spectrum
     temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
-    spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
+    spc <- new("hyperSpec",
+      spc = temp_spc,
+      wavelength = list_jdx[[4]]$x,
+      labels = list(.wavelength = x_units, spc = y_units)
+    )
     spc@data$filename <- file
     spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
