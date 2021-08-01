@@ -48,7 +48,6 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
     .spc_io_postprocess_optional(spc, filename = file)
     # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
-
   }
   # Not sure this next option will be of great interest to most hyperSpec users,
   # but it works
