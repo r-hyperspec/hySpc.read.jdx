@@ -37,9 +37,8 @@
 #' @examples
 #' file <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' spc <- read_jdx(file)
-#' plot(spc) # The hyperSpec object is in the 2nd list element
+#' plot(spc)
 #'
-#' head(spc, n = 40) # Metadata is available in the 1st list element
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
