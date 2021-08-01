@@ -47,7 +47,6 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
     spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
     spc@data$filename <- file
-    spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   }
   # Not sure this next option will be of great interest to most hyperSpec users,
@@ -58,7 +57,6 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
     spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
     spc@data$filename <- file
-    spc@label$filename <- file
     return(list(metadata = list_jdx[[2]], hyperSpec = spc))
   } else {
     stop(
