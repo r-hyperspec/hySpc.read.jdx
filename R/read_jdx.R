@@ -8,13 +8,13 @@
 #' See the vignettes there for much more information:
 #' `browseVignettes("readJDX")`.
 #'
-#' @param file Character. The file name to import.
+#' @param file (character): The file name to import.
 #'        See "file" argument in [readJDX::readJDX()].
 #'
-#' @param SOFC Logical. "Stop on Failed Check".
+#' @param SOFC (logical): "Stop on Failed Check".
 #'        See "SOFC" argument in [readJDX::readJDX()].
 #'
-#' @param debuglevel Integer. The level of debug reporting desired.
+#' @param debuglevel (integer): The level of debug reporting desired.
 #'        See "debug" argument in [readJDX::readJDX()].
 #'
 #'
