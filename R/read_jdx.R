@@ -82,7 +82,6 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
 # Unit tests -----------------------------------------------------------------
 
 hySpc.testthat::test(read_jdx) <- function() {
-  context("read_jdx")
 
   # get data files
   sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
