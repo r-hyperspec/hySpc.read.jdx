@@ -42,8 +42,8 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
   # Extract labels
-  x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNIT")
-  y_units <- jdx_extract_value(list_jdx$metadata, key = "YUNIT")
+  x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNITS")
+  y_units <- jdx_extract_value(list_jdx$metadata, key = "YUNITS")
 
   if (length(list_jdx) == 4) {
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
