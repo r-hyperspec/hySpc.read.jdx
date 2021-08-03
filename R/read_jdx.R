@@ -42,11 +42,13 @@
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
+  x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNIT")
+  y_units <- jdx_extract_value(list_jdx$metadata, key = "YUNIT")
+
   if (length(list_jdx) == 4) {
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
     spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
-    .spc_io_postprocess_optional(spc, filename = file)
-    # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
+
   }
   # Not sure this next option will be of great interest to most hyperSpec users,
   # but it works
@@ -55,8 +57,7 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
     #         1D NMR spectrum
     temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
     spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
-    .spc_io_postprocess_optional(spc, filename=file)
-    # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
+
   } else {
     stop(
       "read_jdx() cannot process all types of JCAMP-DX files.\n",
@@ -66,6 +67,10 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
       packageDescription("hySpc.read.jdx")$BugReports
     )
   }
+
+  # Output
+  .spc_io_postprocess_optional(spc, filename = file)
+  # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
 }
 
 
