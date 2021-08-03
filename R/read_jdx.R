@@ -1,7 +1,7 @@
 
 # Function -------------------------------------------------------------------
 
-#' Import JCAMP-DX Files to hyperSpec
+#' Import JCAMP-DX files to hyperSpec
 #'
 #' Import JCAMP-DX files to `hyperSpec` objects.
 #' Uses the [readJDX()][readJDX::readJDX()] function in package \pkg{readJDX}.
@@ -37,25 +37,33 @@
 #' file <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' spc <- read_jdx(file)
 #' plot(spc)
-#'
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
+  # Extract labels
+  x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNITS")
+  y_units <- jdx_extract_value(list_jdx$metadata, key = "YUNITS")
+
   if (length(list_jdx) == 4) {
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
-    spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
-    .spc_io_postprocess_optional(spc, filename = file)
-    # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
+    spc <- new("hyperSpec",
+      spc = list_jdx[[4]][["y"]],
+      wavelength = list_jdx[[4]][["x"]],
+      labels = list(.wavelength = x_units, spc = y_units)
+    )
   }
+
   # Not sure this next option will be of great interest to most hyperSpec users,
   # but it works
   else if (length(list_jdx) == 5) {
     # Case 2: Includes spectrum and the real and imaginary parts of
     #         1D NMR spectrum
     temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
-    spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
-    .spc_io_postprocess_optional(spc, filename=file)
-    # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
+    spc <- new("hyperSpec",
+      spc = temp_spc,
+      wavelength = list_jdx[[4]]$x,
+      labels = list(.wavelength = x_units, spc = y_units)
+    )
   } else {
     stop(
       "read_jdx() cannot process all types of JCAMP-DX files.\n",
@@ -65,6 +73,9 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
       packageDescription("hySpc.read.jdx")$BugReports
     )
   }
+
+  # Output
+  .spc_io_postprocess_optional(spc, filename = file)
 }
 
 
@@ -101,5 +112,13 @@ hySpc.testthat::test(read_jdx) <- function() {
       expect_error(spc <- read_jdx(isasspc1)),
       "Looks like 2D NMR but could not identify vendor"
     )
+  })
+
+  test_that("Labels are correct", {
+    expect_silent(spc <- read_jdx(sbo))
+    expect_length(labels(spc), 3)
+    expect_equal(labels(spc, "filename"), "filename")
+    expect_equal(as.character(labels(spc, "spc")), "TRANSMITTANCE") # y units
+    expect_equal(as.character(labels(spc, ".wavelength")), "1/CM") # x units
   })
 }
