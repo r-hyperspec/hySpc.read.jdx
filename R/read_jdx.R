@@ -14,7 +14,7 @@
 #' @param SOFC Logical. "Stop on Failed Check".
 #'        See "SOFC" argument in [readJDX::readJDX()].
 #'
-#' @param debug Integer. The level of debug reporting desired.
+#' @param debuglevel Integer. The level of debug reporting desired.
 #'        See "debug" argument in [readJDX::readJDX()].
 #'
 #'
@@ -37,8 +37,8 @@
 #' file <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' spc <- read_jdx(file)
 #' plot(spc)
-read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
-  list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
+read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debuglevel = 0) {
+  list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debuglevel)
 
   # Extract labels
   x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNITS")
