@@ -38,7 +38,6 @@
 #' file <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' spc <- read_jdx(file)
 #' plot(spc)
-#'
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
@@ -47,17 +46,24 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
 
   if (length(list_jdx) == 4) {
     # Case 1: A single spectrum (IR, Raman, UV, processed/real 1D NMR, etc)
-    spc <- new("hyperSpec", spc = list_jdx[[4]][["y"]], wavelength = list_jdx[[4]][["x"]])
-
+    spc <- new("hyperSpec",
+      spc = list_jdx[[4]][["y"]],
+      wavelength = list_jdx[[4]][["x"]],
+      labels = list(.wavelength = x_units, spc = y_units)
+    )
   }
+
   # Not sure this next option will be of great interest to most hyperSpec users,
   # but it works
   else if (length(list_jdx) == 5) {
     # Case 2: Includes spectrum and the real and imaginary parts of
     #         1D NMR spectrum
     temp_spc <- rbind(list_jdx[[4]]$y, list_jdx[[5]]$y)
-    spc <- new("hyperSpec", spc = temp_spc, wavelength = list_jdx[[4]]$x)
-
+    spc <- new("hyperSpec",
+      spc = temp_spc,
+      wavelength = list_jdx[[4]]$x,
+      labels = list(.wavelength = x_units, spc = y_units)
+    )
   } else {
     stop(
       "read_jdx() cannot process all types of JCAMP-DX files.\n",
