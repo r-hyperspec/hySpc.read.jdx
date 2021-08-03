@@ -115,4 +115,12 @@ hySpc.testthat::test(read_jdx) <- function() {
       "Looks like 2D NMR but could not identify vendor"
     )
   })
+
+  test_that("Labels are correct", {
+    expect_silent(spc <- read_jdx(sbo))
+    expect_length(labels(spc), 3)
+    expect_equal(labels(spc, "filename"), "filename")
+    expect_equal(as.character(labels(spc, "spc")), "TRANSMITTANCE") # y units
+    expect_equal(as.character(labels(spc, ".wavelength")), "1/CM") # x units
+  })
 }
