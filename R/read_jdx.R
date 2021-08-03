@@ -77,7 +77,6 @@ read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) 
 
   # Output
   .spc_io_postprocess_optional(spc, filename = file)
-  # return(list(metadata = list_jdx[[2]], hyperSpec = spc))
 }
 
 
