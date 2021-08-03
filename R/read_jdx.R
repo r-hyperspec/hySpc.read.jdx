@@ -1,7 +1,7 @@
 
 # Function -------------------------------------------------------------------
 
-#' Import JCAMP-DX Files to hyperSpec
+#' Import JCAMP-DX files to hyperSpec
 #'
 #' Import JCAMP-DX files to `hyperSpec` objects.
 #' Uses the [readJDX()][readJDX::readJDX()] function in package \pkg{readJDX}.
