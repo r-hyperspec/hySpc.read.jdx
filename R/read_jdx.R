@@ -103,7 +103,8 @@ hySpc.testthat::test(read_jdx) <- function() {
   test_that("Error is thrown when corrupt file is imported", {
     expect_output(
       expect_error(spc <- read_jdx(pcrf_265)),
-      "Attempting to sum DIFs")
+      "Attempting to sum DIFs"
+    )
   })
 
   # next test is a 2D NMR file which readJDX imports fine, but
