@@ -41,6 +41,7 @@
 read_jdx <- function(file = stop("filename is needed"), SOFC = TRUE, debug = 0) {
   list_jdx <- readJDX(file = file, SOFC = SOFC, debug = debug)
 
+  # Extract labels
   x_units <- jdx_extract_value(list_jdx$metadata, key = "XUNIT")
   y_units <- jdx_extract_value(list_jdx$metadata, key = "YUNIT")
 
