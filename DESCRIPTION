@@ -34,6 +34,5 @@ URL:
     https://github.com/r-hyperspec/hySpc.read.jdx
 BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
 RoxygenNote: 7.1.1
-Roxygen: list(markdown = TRUE)
-Roxygen: list(packages = "roxut", roclets = c("namespace", "rd", "roxut::tests_roclet"))
+Roxygen: list(markdown = TRUE, packages = "roxut", roclets = c("namespace", "rd", "roxut::tests_roclet"))
 Config/testthat/edition: 3
