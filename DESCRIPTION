@@ -12,7 +12,7 @@ Authors@R: c(
     person("Bryan A.", "Hanson", role = c("aut", "cre"), email = "hanson@depauw.edu",
       comment = "creator of readJDX"),
     person("Vilmantas", "Gegzna", role = "aut")
-    )
+  )
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
@@ -22,7 +22,6 @@ Depends:
     hyperSpec (>= 0.100.0),
     readJDX
 Imports: 
-    hySpc.testthat,
     testthat (>= 3.0.0),
     methods,
     utils
@@ -34,5 +33,8 @@ URL:
     https://github.com/r-hyperspec/hySpc.read.jdx
 BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
 RoxygenNote: 7.1.1
-Roxygen: list(markdown = TRUE, packages = "roxut", roclets = c("namespace", "rd", "roxut::tests_roclet"))
+Roxygen: list(
+    markdown = TRUE,
+    packages = "roxut", roclets = c("namespace", "rd", "roxut::tests_roclet")
+  )
 Config/testthat/edition: 3
