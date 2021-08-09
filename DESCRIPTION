@@ -22,7 +22,6 @@ Depends:
     hyperSpec (>= 0.100.0),
     readJDX
 Imports: 
-    hySpc.testthat,
     testthat (>= 3.0.0),
     methods,
     utils
