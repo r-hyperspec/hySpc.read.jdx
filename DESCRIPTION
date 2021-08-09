@@ -11,7 +11,7 @@ Authors@R: c(
     person("Sang", "Truong", role = "aut", email = "sttruong@stanford.edu"),
     person("Bryan A.", "Hanson", role = c("aut", "cre"), email = "hanson@depauw.edu",
       comment = "creator of readJDX"),
-    person("Vilmantas", "Gegzna", role = "ctb")
+    person("Vilmantas", "Gegzna", role = "aut")
     )
 License: MIT + file LICENSE
 Encoding: UTF-8
