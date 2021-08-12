@@ -35,7 +35,6 @@
 #' file <- system.file("extdata", "SBO.jdx", package = "readJDX")
 #' spc <- read_jdx(file)
 #' plot(spc)
-#'
 #' @tests testthat
 #'
 #' # get data files
