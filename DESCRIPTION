@@ -23,10 +23,10 @@ Depends:
 Imports: 
     testthat (>= 3.0.0),
     methods,
-    utils
-Suggests:
-    covr,
+    utils,
     roxut
+Suggests:
+    covr
 URL: 
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
