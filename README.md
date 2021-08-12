@@ -3,7 +3,7 @@
 [![R-CMD-check](https://github.com/r-hyperspec/hySpc.read.jdx/workflows/R-CMD-check/badge.svg)](https://github.com/r-hyperspec/hySpc.read.jdx/actions)
 ![Website (pkgdown)](https://github.com/r-hyperspec/hySpc.read.jdx/workflows/Website%20(pkgdown)/badge.svg)
 [![Codecov](https://codecov.io/gh/r-hyperspec/hySpc.read.jdx/branch/develop/graph/badge.svg)](https://codecov.io/gh/r-hyperspec/hySpc.read.jdx?branch=develop)
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!--[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/hySpc.read.jdx)](https://cran.r-project.org/package=hySpc.read.jdx)-->
 <!--[![metacran downloads](https://cranlogs.r-pkg.org/badges/hySpc.read.jdx)](https://cran.r-project.org/package=hySpc.read.jdx)-->
 <!-- badges: end -->
@@ -12,9 +12,7 @@
 
 # R Package **hySpc.read.jdx**
 
-[**R**](https://www.r-project.org/) package **hySpc.read.jdx** is a member of the [**`r-hyperspec`**](https://r-hyperspec.github.io/) packages family, which imports
- files in the Joint Committee on Atomic and Molecular Physical Data Data Exchange format (JCAMP-DX). The imported data are returned as hyperSpec objects.  This is a
-  wrapper for the readJDX package. 
+[**R**](https://www.r-project.org/) package **hySpc.read.jdx** is a member of the [**`r-hyperspec`**](https://r-hyperspec.github.io/) packages family. It import files written in the Joint Committee on Atomic and Molecular Physical Data Data Exchange format (JCAMP-DX). The imported data are returned as `hyperSpec` objects. A wrapper for the `readJDX` package.
 
 <!-- ---------------------------------------------------------------------- -->
 
@@ -33,7 +31,7 @@ The documentation of the other **`r-hyperspec`** family packages can be found at
 
 ### Install from CRAN
 
-You can install the released version of **hySpc.read.jdx** from [CRAN](https://cran.r-project.org/package=hySpc.read.jdx) with:
+When available, you can install the released version of **hySpc.read.jdx** from [CRAN](https://cran.r-project.org/package=hySpc.read.jdx) with:
 
 ```r
 install.packages("hySpc.read.jdx")
@@ -106,4 +104,3 @@ devtools::install(build_vignettes = TRUE)
 
 **NOTE 1:**
 Usually, "Windows" users need to download, install and properly configure **Rtools** (see [these instructions](https://cran.r-project.org/bin/windows/Rtools/)) to make the code above work.
-
