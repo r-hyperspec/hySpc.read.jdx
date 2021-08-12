@@ -26,7 +26,7 @@
 #' @export
 #'
 #' @import hyperSpec
-#' @import hySpc.testthat
+#' @import roxut
 #' @import readJDX
 #' @importFrom methods new
 #' @importFrom utils packageDescription
