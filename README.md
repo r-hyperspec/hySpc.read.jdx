@@ -29,7 +29,7 @@ The documentation of the other **`r-hyperspec`** family packages can be found at
 
 <!-- ---------------------------------------------------------------------- -->
 
-## Installation
+## Installation of Released Version
 
 ### Install from CRAN
 
@@ -37,6 +37,18 @@ You can install the released version of **hySpc.read.jdx** from [CRAN](https://c
 
 ```r
 install.packages("hySpc.read.jdx")
+```
+
+
+## Installation of In-Development Version
+
+### Install from CRAN-like Repository
+
+The recommended way to install the in-development version:
+
+```r
+repos <- c("https://r-hyperspec.github.io/pkg-repo/", getOption("repos"))
+install.packages("hySpc.read.jdx", repos = repos)
 ```
 
 

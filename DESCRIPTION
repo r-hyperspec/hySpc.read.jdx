@@ -3,32 +3,32 @@ Type: Package
 Version: 1.0.0.0
 Date: 2021-08-12
 Title: File Import Functions for Spectra in JCAMP-DX File Formats
-Description: Import files in the Joint Committee on Atomic and Molecular 
-             Physical Data Data Exchange format (JCAMP-DX). The imported 
-             data are returned as hyperSpec objects. A wrapper for the 
+Description: Import files in the Joint Committee on Atomic and Molecular
+             Physical Data Data Exchange format (JCAMP-DX). The imported
+             data are returned as hyperSpec objects. A wrapper for the
              readJDX package.
 Authors@R: c(
     person("Sang", "Truong", role = "aut", email = "sttruong@stanford.edu"),
     person("Bryan A.", "Hanson", role = c("aut", "cre"), email = "hanson@depauw.edu",
       comment = "creator of readJDX"),
-    person("Vilmantas", "Gegzna", role = "ctb")
-    )
+    person("Vilmantas", "Gegzna", role = "aut")
+  )
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
-Additional_repositories: 
+Additional_repositories:
     https://r-hyperspec.github.io/pkg-repo/
 Depends:
     hyperSpec (>= 0.100.0),
     readJDX
-Imports: 
+Imports:
     testthat (>= 3.0.0),
     methods,
     utils,
     roxut
 Suggests:
     covr
-URL: 
+URL:
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
 BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
