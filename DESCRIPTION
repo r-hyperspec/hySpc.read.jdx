@@ -1,6 +1,7 @@
 Package: hySpc.read.jdx
 Type: Package
 Version: 1.0.0.0
+Date: 2021-08-12
 Title: File Import Functions for Spectra in JCAMP-DX File Formats
 Description: Import files in the Joint Committee on Atomic and Molecular 
              Physical Data Data Exchange format (JCAMP-DX). The imported 
