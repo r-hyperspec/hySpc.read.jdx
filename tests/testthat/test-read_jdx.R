@@ -1,6 +1,6 @@
 # File created by roxut; edit the function definition file, not this file
 
-# test found in read_jdx.R:39 (file:line)
+# test found in read_jdx.R:38 (file:line)
  
 
 # get data files
