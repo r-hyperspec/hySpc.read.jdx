@@ -32,7 +32,7 @@ URL:
     https://r-hyperspec.github.io/hySpc.read.jdx,
     https://github.com/r-hyperspec/hySpc.read.jdx
 BugReports: https://github.com/r-hyperspec/hySpc.read.jdx/issues
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE,
               packages = "roxut",
               roclets = c("namespace", "rd", "roxut::tests_roclet"))
