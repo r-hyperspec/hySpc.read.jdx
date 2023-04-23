@@ -1,7 +1,7 @@
 # File created by roxut; edit the function definition file, not this file
 
 # test found in read_jdx.R:35 (file:line)
- 
+
 
 sbo <- system.file("extdata", "SBO.jdx", package = "readJDX")
 
@@ -49,8 +49,8 @@ pcrf_265 <- system.file("extdata", "PCRF_line265.jdx", package = "readJDX")
 
 test_that("Error is thrown when corrupt file is imported", {
   expect_output(
-  expect_error(spc <- read_jdx(pcrf_265)),
-  "Attempting to sum DIFs"
+    expect_error(spc <- read_jdx(pcrf_265)),
+    "Attempting to sum DIFs"
   )
 })
 
@@ -61,9 +61,8 @@ test_that("Error is thrown when corrupt file is imported", {
 isasspc1 <- system.file("extdata", "isasspc1.dx", package = "readJDX")
 
 test_that("Error is thrown when 2D NMR file is imported", {
-expect_warning(
-expect_error(spc <- read_jdx(isasspc1)),
-"Looks like 2D NMR but could not identify vendor"
-)
+  expect_warning(
+    expect_error(spc <- read_jdx(isasspc1)),
+    "Looks like 2D NMR but could not identify vendor"
+  )
 })
-
